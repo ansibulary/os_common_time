@@ -1,0 +1,2 @@
+time:
+  zone: "{{ timezone|default(zone.region + '/' + zone.timezone) }}"

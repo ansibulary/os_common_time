@@ -1,0 +1,12 @@
+---
+- name: /etc/localtime symlinked to regional timezone
+  file:
+    state: link
+    src: /usr/share/zoneinfo/{{ time.zone }}
+    dest: /etc/localtime
+
+# - name: Hardware clock set
+#   command: hwclock --systohc
+#   args:
+#     creates: /etc/adjtime
+#   when: time.zone == 'UTC'
